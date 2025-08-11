@@ -1,0 +1,395 @@
+/* Custom button styles for inventory actions */
+.inventory-action-btn {
+  background: #e52d27;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0 2px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 2px rgba(229,45,39,0.08);
+}
+.inventory-action-btn:hover, .inventory-action-btn:focus {
+  background: #b31217;
+  outline: none;
+}
+.inventory-action-btn:disabled {
+  background: #f3f4f6;
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+.inventory-action-btn.icon-btn {
+  padding: 6px 10px;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  min-width: 32px;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ---------- General Styles ---------- */
+.inventory-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 3rem 2rem 3rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* ---------- Header Section ---------- */
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.title-section {
+  flex: 1;
+}
+
+.inventory-title {
+  font-size: 2.5rem;
+  color: #b31217;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+
+.title-underline {
+  width: 450px;
+  height: 4px;
+  background: #b31217;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.heading-subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ---------- Toggle Switch ---------- */
+.toggle-switch {
+  display: flex;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 4px;
+  width: 200px;
+  height: 40px;
+  position: relative;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+.toggle-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6b7280;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.toggle-option.active {
+  color: white;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background: #e52d27;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.toggle-slider.table {
+  transform: translateX(calc(100% + 4px));
+}
+
+/* ---------- Filter Section ---------- */
+.filters-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filter-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  min-width: 180px;
+  background: white;
+  color: #374151;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #e52d27;
+  box-shadow: 0 0 0 2px rgba(229, 45, 39, 0.1);
+}
+
+/* ---------- Table View ---------- */
+.table-container {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+}
+
+.inventory-table th {
+  background: #f9fafb;
+  color: #6b7280;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.inventory-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #111827;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.inventory-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.inventory-table td:first-child {
+  font-weight: 600;
+  color: #111827;
+  font-size: 1rem;
+}
+
+.inventory-table td:nth-child(2) {
+  text-transform: capitalize;
+  color: #374151;
+}
+
+.inventory-table td:nth-child(3) {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ---------- Status Indicators ---------- */
+.status {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status.low {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.status.normal {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+/* ---------- Graph View ---------- */
+.graphs-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 100%;
+}
+
+.blood-group-graph {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: box-shadow 0.3s ease;
+}
+
+.blood-group-graph:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.blood-group-graph h3 {
+  margin: 0 0 1rem 0;
+  color: #111827;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+.bars-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 160px;
+  gap: 1rem;
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ---------- Bar Styles ---------- */
+.bar {
+  width: 24px;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.bar:hover {
+  transform: translateY(-2px);
+}
+
+.bar.plasma { 
+  background: #ef4444;
+}
+
+.bar.rbcs { 
+  background: #f97316;
+}
+
+.bar.platelets { 
+  background: #8b5cf6;
+}
+
+.bar-value {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #1f2937;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.bar-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* ---------- Summary Cards ---------- */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.summary-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.summary-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.summary-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0.25rem 0;
+}
+
+.summary-value.total { color: #111827; }
+.summary-value.plasma { color: #ef4444; }
+.summary-value.rbcs { color: #f97316; }
+.summary-value.platelets { color: #8b5cf6; }
+
+.summary-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0;
+}
+
+.summary-trend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.trend-up {
+  color: #16a34a;
+}
+
+.trend-down {
+  color: #dc2626;
+}
+
+/* Remove legacy styles */
+.inventory-header::before,
+.blood-group-graph::before,
+.blood-group-graph::after,
+.bars-container::before {
+  display: none;
+}
