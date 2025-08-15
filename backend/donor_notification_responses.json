@@ -1,0 +1,15 @@
+{
+  "1": {
+    "response": {
+      "status": "success",
+      "message": "Notification sent",
+      "donor_id": 1,
+      "notification_message": "Hospital : Shree's Hospital - Urgent blood donation needed! Take the eligibility test to confirm your availability."
+    },
+    "timestamp": "2025-08-15 21:48:44",
+    "notification": {
+      "message": "Hospital : Shree's Hospital - Urgent blood donation needed! Take the eligibility test to confirm your availability.",
+      "timestamp": "2025-08-15 21:48:44"
+    }
+  }
+}

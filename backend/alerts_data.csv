@@ -1,0 +1,10 @@
+alert_id,hospital_id,hospital_name,blood_group,component,units_needed,urgency,status,date,time,blood_group_id,component_id
+1755243195941,12,Hospital 12,A+,Whole Blood,3,Normal,Resolved,15-08-2025,13:03,2,2
+1755239827923,18,Hospital 18,AB+,Whole Blood,4,Normal,Resolved,15-08-2025,12:07,6,4
+1755239527892,10,Hospital 10,A+,Whole Blood,5,Urgent,Resolved,15-08-2025,12:02,8,1
+1755239227870,1,Hospital 1,AB-,RBC,3,Normal,Pending,15-08-2025,11:57,8,4
+1755238927819,6,Hospital 6,AB-,RBC,2,Normal,Pending,15-08-2025,11:52,4,4
+1755238627766,3,Hospital 3,B+,Platelets,4,Urgent,Pending,15-08-2025,11:47,1,1
+1755238327708,20,Hospital 20,A+,Platelets,5,Normal,Pending,15-08-2025,11:42,1,2
+1755238028339,3,Hospital 3,A+,Whole Blood,4,Critical,Pending,15-08-2025,11:37,5,1
+1755238027636,6,Hospital 6,A+,Whole Blood,1,Critical,Pending,15-08-2025,11:37,6,5

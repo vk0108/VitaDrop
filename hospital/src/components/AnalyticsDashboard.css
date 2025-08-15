@@ -1,0 +1,327 @@
+.analytics-filter-gap {
+  margin-bottom: 28px;
+}
+.analytics-date-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.analytics-date-label {
+  font-size: 1.01rem;
+  color: #b31217;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+.analytics-date-input {
+  padding: 7px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: #222;
+  background: #fff;
+}
+.analytics-today-btn {
+  background: #e52d27;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 18px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.analytics-today-btn:hover {
+  background: #b31217;
+}
+.analytics-summary-row {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.analytics-summary-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(229,45,39,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+  min-width: 200px;
+  flex: 1 1 200px;
+  padding: 24px 0 18px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.analytics-summary-label {
+  font-size: 1.01rem;
+  color: #b31217;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-family: 'Inter', sans-serif;
+}
+.analytics-summary-value {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #222;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 2px;
+}
+.analytics-dashboard {
+  padding: 20px;
+  background-color: #f5f5f5;
+  /* min-height removed to reduce card height */
+}
+
+.analytics-header {
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.analytics-heading {
+  font-size: 2.5rem;
+  color: #b31217;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+
+.analytics-underline {
+  width: 270px;
+  height: 4px;
+  background: #b31217;
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 2px;
+}
+
+.analytics-subhead {
+  color: #6b7280;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 400;
+}
+
+.analytics-header h1 {
+  color: #dc3545;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.analytics-grid {
+  display: flex;
+  gap: 32px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.analytics-grid.analytics-grid-center {
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.stats-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 28px 28px 22px 28px;
+  box-shadow: 0 4px 16px rgba(229,45,39,0.08), 0 1.5px 4px rgba(0,0,0,0.04);
+  min-width: 340px;
+  max-width: 480px;
+  width: 480px;
+  min-height: 480px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.stats-header h3 {
+  background: none;
+  color: #b31217;
+  margin: 0;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  font-family: 'Inter', sans-serif;
+  padding: 0;
+  box-shadow: none;
+}
+
+
+
+.stats-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.total-label {
+  font-size: 1.08rem;
+  color: #b31217;
+  font-weight: 500;
+}
+
+.total-value {
+  font-size: 1.35rem;
+  color: #222;
+  font-weight: 700;
+}
+
+.stats-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.stats-chart.horizontal .chart-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.stats-chart.horizontal .chart-label {
+  min-width: 160px;
+  font-size: 1.01rem;
+  text-align: right;
+  color: #222;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  font-family: 'Inter', sans-serif;
+  justify-content: flex-end;
+  display: flex;
+  padding-right: 8px;
+}
+
+.stats-chart.horizontal .chart-bar-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 10px;
+}
+
+.stats-chart.horizontal .chart-bar {
+  background: linear-gradient(90deg, #e52d27 60%, #b31217 100%);
+  height: 22px;
+  min-width: 2px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(229,45,39,0.08);
+  transition: width 0.3s;
+}
+
+.stats-chart.vertical .chart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.stats-chart.vertical .chart-label {
+  font-size: 1.01rem;
+  color: #222;
+  flex: 1;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  max-width: 260px;
+  word-break: break-word;
+  text-align: right;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.stats-chart.vertical .chart-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.stats-chart.vertical .chart-bar {
+  background-color: #dc3545;
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+}
+
+.chart-value {
+  font-size: 1.01rem;
+  font-weight: 600;
+  color: #b31217;
+  min-width: 48px;
+  text-align: right;
+  letter-spacing: 0.01em;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .analytics-grid {
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .stats-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats-card {
+    max-height: 340px;
+  }
+  .stats-chart.vertical .chart-label {
+    max-width: 120px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Added for donor registered scroll and card height fix */
+.stats-chart.vertical {
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+
+@media (max-width: 768px) {
+  .analytics-dashboard {
+    padding: 10px;
+  }
+  
+  .stats-card {
+    padding: 15px;
+  }
+  
+  .chart-label {
+    min-width: 100px;
+    font-size: 12px;
+  }
+}

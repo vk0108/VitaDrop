@@ -1,0 +1,214 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.logo-section {
+  margin-bottom: 30px;
+}
+
+.logo-section h1 {
+  color: #e52d27;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-extras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+}
+
+.remember-me input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.forgot-password {
+  color: #e52d27;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-btn {
+  background: #e52d27;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  border-radius: 6px;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background: #b31217;
+}
+
+.professional-background {
+  position: relative;
+  background: linear-gradient(135deg, #f87171, #fef2f2, #fde68a);
+  overflow: hidden;
+  z-index: 0;
+}
+
+.emoji-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1; /* Ensure emojis stay behind the login box */
+}
+
+.emoji {
+  position: absolute;
+  font-size: 1.8rem;
+  animation: float 10s linear infinite;
+  opacity: 0.7;
+}
+
+.emoji:nth-child(1) {
+  top: 5%;
+  left: 10%;
+  animation-duration: 12s;
+}
+
+.emoji:nth-child(2) {
+  top: 15%;
+  left: 80%;
+  animation-duration: 14s;
+}
+
+.emoji:nth-child(3) {
+  top: 35%;
+  left: 25%;
+  animation-duration: 10s;
+}
+
+.emoji:nth-child(4) {
+  top: 55%;
+  left: 70%;
+  animation-duration: 16s;
+}
+
+.emoji:nth-child(5) {
+  top: 10%;
+  left: 50%;
+  animation-duration: 18s;
+}
+
+.emoji:nth-child(6) {
+  top: 70%;
+  left: 15%;
+  animation-duration: 12s;
+}
+
+.emoji:nth-child(7) {
+  top: 85%;
+  left: 90%;
+  animation-duration: 15s;
+}
+
+.emoji:nth-child(8) {
+  top: 50%;
+  left: 5%;
+  animation-duration: 20s;
+}
+
+.emoji:nth-child(9) {
+  top: 25%;
+  left: 35%;
+  animation-duration: 14s;
+}
+
+.emoji:nth-child(10) {
+  top: 45%;
+  left: 60%;
+  animation-duration: 16s;
+}
+
+.emoji:nth-child(11) {
+  top: 65%;
+  left: 30%;
+  animation-duration: 18s;
+}
+
+.emoji:nth-child(12) {
+  top: 75%;
+  left: 80%;
+  animation-duration: 20s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(15deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}

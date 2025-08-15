@@ -1,0 +1,2 @@
+alert_id,hospital_id,hospital_name,blood_bank_name,bank_id,phone,distance,blood_group,component,units_needed,urgency,status,date,time
+1755273304699,99,Shree's Hospital,Krithi's Blood Bank,21,+91-9000000000,1.5,A+,Whole Blood,1,High,SENT,"Aug 15, 2025",09:25 PM
