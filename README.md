@@ -1,51 +1,49 @@
-﻿# Blood Bank Management System
+# VitaDrop
 
-A web application for managing blood bank operations, including donor management, inventory tracking, and alert notifications.
+VitaDrop is a modern hospital management platform that connects donors, blood banks to ensure life-saving blood is available when and where it's needed most.  
 
-## Features
-
-- Donor registration and management
-- Blood inventory management
-- Incoming alerts and notifications
-- Analytics dashboard
-- User authentication
-
-## Technologies Used
-
-- Frontend: React (located in `blood_bank/`)
-- Backend: Python Flask (located in `backend/`)
+---
 
 ## Getting Started
 
 ### Prerequisites
+- **Node.js** (v14 or above recommended)
+- **npm** (comes with Node.js)
+- **Python** (v3.8 or above recommended)
+- **Flask** (Python package)
 
-- Node.js and npm (for frontend)
-- Python 3.x (for backend)
+---
 
-### Setup
+## Installation
+1. **Clone the repository**
+    ```sh
+    git clone <https://github.com/vk0108/VitaDrop.git>
+    ```
+2. **Navigate to the project directory**
+    ```sh
+    cd hospital
+    ```
+3. **Install frontend dependencies**
+    ```sh
+    npm install
+    ```
 
-#### Backend
+---
 
-```bash
-cd backend
-pip install -r requirements.txt
-python app.py
-```
+## Running the Applications
 
-#### Frontend
+⚠ **Important:** The backends must be started **before** running the frontends.
 
-```bash
-cd blood_bank
-npm install
-npm start
-```
+### Step 1 – Start Backends
+1. **Python Flask Backend** (PowerShell):
+    ```sh
+    cd backend
+    python app.py
+    ```
 
-## Usage
+   2.**Frontend** (Bash):
+    ```sh
+       cd hospital
+       PORT=3004 npm start
 
-- Access the frontend at `http://localhost:3002`
-- Backend API runs at `http://localhost:5002`
-
-## License
-
-This project is licensed under the MIT License.
 
