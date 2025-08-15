@@ -1,6 +1,6 @@
 # VitaDrop
 
-VitaDrop is a modern blood donation management platform that connects donors, hospitals, and blood banks to ensure life-saving blood is available when and where it's needed most.  
+VitaDrop is a modern blood bank management platform that connects donors, hospitals to ensure life-saving blood is available when and where it's needed most.  
 
 ---
 
@@ -43,4 +43,5 @@ VitaDrop is a modern blood donation management platform that connects donors, ho
    2.**Frontend** (Bash):
     ```sh
        PORT=3002 npm start
+
 
