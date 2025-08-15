@@ -1,3 +1,4 @@
+// Utility to reset notification status for a specific donor (e.g., donor 1)
 import React, { useState, useEffect } from 'react';
 import './DonorAlertMapPage.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
@@ -16,20 +17,34 @@ L.Icon.Default.mergeOptions({
 });
 
 const center = [12.9716, 77.5946];
-const API_BASE_URL = 'http://127.0.0.1:5000';
+const API_BASE_URL = 'http://127.0.0.1:5002';
+
 
 // No mockDonors needed; will use backend data
 
 export default function DonorAlertMapPage() {
   const [donorsNearby, setDonorsNearby] = useState([]);
-  const [notificationStatus, setNotificationStatus] = useState({});
+  const [notificationStatus, setNotificationStatus] = useState(() => {
+    // Load from localStorage if available
+    const saved = localStorage.getItem('notificationStatus');
+    return saved ? JSON.parse(saved) : {};
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [selectedBloodGroup, setSelectedBloodGroup] = useState('');
 
   useEffect(() => {
+    const savedStatus = localStorage.getItem('notificationStatus');
+    if (savedStatus) {
+      setNotificationStatus(JSON.parse(savedStatus));
+    }
     fetchMapAndDonors();
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('notificationStatus', JSON.stringify(notificationStatus));
+  }, [notificationStatus]);
 
   const fetchMapAndDonors = async () => {
     setLoading(true);
@@ -70,7 +85,7 @@ export default function DonorAlertMapPage() {
         },
         body: JSON.stringify({
           donor_id: donorId,
-          message: 'Urgent blood donation needed! Please contact us if you are available to donate.'
+          message: 'Blood Bank : Krithi\'s Blood Bank - Urgent blood donation needed! Take the eligibility test to confirm your availability.'
         })
       });
       if (response.ok) {
@@ -79,12 +94,6 @@ export default function DonorAlertMapPage() {
           ...prev,
           [donorId]: result.status === 'success' ? 'sent' : 'failed'
         }));
-        setTimeout(() => {
-          setNotificationStatus(prev => ({
-            ...prev,
-            [donorId]: Math.random() > 0.5 ? 'accepted' : 'rejected'
-          }));
-        }, 3000);
       } else {
         throw new Error('Failed to send notification');
       }
@@ -92,6 +101,40 @@ export default function DonorAlertMapPage() {
       setNotificationStatus(prev => ({ ...prev, [donorId]: 'failed' }));
     }
   };
+
+  // Poll for donor eligibility response for all 'sent' or 'pending' notifications
+  useEffect(() => {
+    const interval = setInterval(() => {
+      Object.entries(notificationStatus).forEach(async ([donorId, status]) => {
+        if (status === 'sent' || status === 'pending') {
+          try {
+            const eligibilityRes = await fetch('http://localhost:5000/api/receive-eligibility', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ donor_id: donorId })
+            });
+            if (eligibilityRes.ok) {
+              const eligibilityData = await eligibilityRes.json();
+              if (eligibilityData.eligibility === 'yes' || eligibilityData.eligibility === true) {
+                setNotificationStatus(prev => ({
+                  ...prev,
+                  [donorId]: 'accepted'
+                }));
+              } else if (eligibilityData.eligibility === 'no' || eligibilityData.eligibility === false) {
+                setNotificationStatus(prev => ({
+                  ...prev,
+                  [donorId]: 'rejected'
+                }));
+              }
+            }
+          } catch (err) {
+            // Optionally handle error
+          }
+        }
+      });
+    }, 10000); // Poll every 10 seconds
+    return () => clearInterval(interval);
+  }, [notificationStatus]);
 
   const handleSendAllNotifications = () => {
     donorsNearby.forEach(donor => {
@@ -109,6 +152,16 @@ export default function DonorAlertMapPage() {
       </div>
     );
   }
+
+  // Get unique blood groups from donorsNearby
+  const bloodGroups = Array.from(new Set(donorsNearby.map(d => d.blood_group || d.bloodGroup))).filter(Boolean);
+
+  // Filter donors by selected blood group
+  const filteredDonors = selectedBloodGroup
+    ? donorsNearby.filter(d => (d.blood_group || d.bloodGroup) === selectedBloodGroup)
+    : donorsNearby;
+  
+
 
   return (
     <div className="donor-alert-map-page">
@@ -170,6 +223,23 @@ export default function DonorAlertMapPage() {
             Send All Notifications
           </button>
         </div>
+
+        {/* Blood group filter dropdown */}
+        <div style={{ marginBottom: '18px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <label htmlFor="blood-group-filter" style={{ fontWeight: 500 }}>Filter by Blood Group:</label>
+          <select
+            id="blood-group-filter"
+            value={selectedBloodGroup}
+            onChange={e => setSelectedBloodGroup(e.target.value)}
+            style={{ padding: '7px 14px', borderRadius: '6px', border: '1px solid #ccc', fontSize: '1rem' }}
+          >
+            <option value="">All</option>
+            {bloodGroups.map(bg => (
+              <option key={bg} value={bg}>{bg}</option>
+            ))}
+          </select>
+        </div>
+
         <table className="notifications-table">
           <thead>
             <tr>
@@ -182,14 +252,14 @@ export default function DonorAlertMapPage() {
             </tr>
           </thead>
           <tbody>
-            {donorsNearby.length === 0 ? (
+            {filteredDonors.length === 0 ? (
               <tr>
                 <td colSpan="6" className="no-donors">
-                  No donors found within 5km radius
+                  No donors found {selectedBloodGroup ? `for ${selectedBloodGroup}` : 'within 5km radius'}
                 </td>
               </tr>
             ) : (
-              donorsNearby.map(donor => (
+              filteredDonors.map(donor => (
                 <tr key={donor.donor_id || donor.id}>
                   <td>{donor.name}</td>
                   <td>{donor.blood_group || donor.bloodGroup}</td>

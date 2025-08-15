@@ -1,32 +1,27 @@
-alert_id,hospital_id,hospital_name,blood_group,component,units_needed,urgency,status,date,time,blood_group_id,component_id
-1754899987802,3,Hospital 3,A-,Whole Blood,4,Critical,Pending,11-08-2025,13:43,6,1
-1754899687799,3,Hospital 3,B-,RBC,5,Urgent,Pending,11-08-2025,13:38,6,1
-1754899387757,19,Hospital 19,AB-,Platelets,5,Critical,Pending,11-08-2025,13:33,6,4
-1754896549731,20,Hospital 20,A-,Whole Blood,1,Normal,Resolved,11-08-2025,12:45,4,3
-1754896249703,7,Hospital 7,O-,RBC,4,Normal,Pending,11-08-2025,12:40,7,4
-1754895949699,16,Hospital 16,A-,Plasma,5,Critical,Pending,11-08-2025,12:35,1,3
-1754895649672,8,Hospital 8,B-,Platelets,1,Normal,Pending,11-08-2025,12:30,2,2
-1754895349668,5,Hospital 5,B+,RBC,5,Critical,Pending,11-08-2025,12:25,4,3
-1754894828171,8,Hospital 8,AB+,Whole Blood,2,Normal,Pending,11-08-2025,12:17,1,1
-1754894528168,14,Hospital 14,O-,Platelets,1,Normal,Pending,11-08-2025,12:12,3,1
-1754894228165,3,Hospital 3,O-,Plasma,5,Urgent,Pending,11-08-2025,12:07,7,5
-1754893928162,10,Hospital 10,O-,Whole Blood,3,Urgent,Pending,11-08-2025,12:02,4,1
-1754893628138,9,Hospital 9,B+,Whole Blood,1,Urgent,Pending,11-08-2025,11:57,8,1
-1754893609617,4,Hospital 4,A+,RBC,3,Critical,Pending,11-08-2025,11:56,7,4
-1,5,Green Valley Hospital,AB+,Packed Red Blood Cells,5,Critical,Resolved,10-08-2025,9:47,7,4
-2,2,ABC Medical Center,O-,Plasma,1,Normal,Resolved,08-08-2025,15:47,6,2
-3,1,XYZ Hospital,B+,Fresh Frozen Plasma,4,Urgent,Resolved,07-08-2025,16:47,3,5
-4,2,ABC Medical Center,O+,Whole Blood,2,Critical,Resolved,10-08-2025,1:47,5,1
-5,2,ABC Medical Center,O-,Platelets,1,Normal,Pending,08-08-2025,11:47,6,3
-6,4,Sunrise Health,AB-,Platelets,3,Urgent,Pending,08-08-2025,15:47,8,3
-7,4,Sunrise Health,A-,Fresh Frozen Plasma,2,Urgent,Resolved,10-08-2025,9:47,2,5
-8,1,XYZ Hospital,A+,Platelets,3,Critical,Resolved,09-08-2025,5:47,1,3
-9,5,Green Valley Hospital,A+,Platelets,5,Urgent,Pending,09-08-2025,22:47,1,3
-10,3,City Hospital,O+,Whole Blood,3,Critical,Resolved,08-08-2025,13:47,5,1
-11,5,Green Valley Hospital,A+,Packed Red Blood Cells,2,Critical,Pending,07-08-2025,16:47,1,4
-12,1,XYZ Hospital,A+,Fresh Frozen Plasma,1,Urgent,Pending,08-08-2025,3:47,1,5
-13,4,Sunrise Health,AB-,Platelets,5,Critical,Resolved,09-08-2025,23:47,8,3
-14,4,Sunrise Health,A-,Plasma,3,Urgent,Resolved,09-08-2025,4:47,2,2
-15,5,Green Valley Hospital,O+,Fresh Frozen Plasma,4,Urgent,Resolved,08-08-2025,15:47,5,5
-1754893312035,4,Hospital 4,O+,Plasma,1,Normal,Resolved,11-08-2025,11:51,6,4
-1754900089196,Donor Response,Donor Donor 2 (A-) has responded: Rejected,A-,Whole Blood,4,Pending,2025-08-11 13:44:49
+alert_id,bank_id,hospital_id,hospital_name,blood_group,component,units_needed,urgency,status,date,time,blood_group_id,component_id
+1755273304699,21,99,Shree's Hospital,A+,Whole Blood,1,High,Resolved,"Aug 15, 2025",09:25 PM,,
+1755266432779,,99,Shree's Hospital,A+,Whole Blood,1,High,Resolved,15-08-2025,19:30,1,1
+1755266365754,,99,Shree's Hospital,A+,Whole Blood,1,High,Pending,15-08-2025,19:29,1,1
+1755266183118,,99,Shree's Hospital,A+,Whole Blood,1,High,Resolved,15-08-2025,19:26,1,1
+1755265721204,,99,Shree's Hospital,A+,Whole Blood,1,High,Pending,15-08-2025,19:18,1,1
+1755238027636,,6,Hospital 6,A+,Whole Blood,1,Critical,Pending,15-08-2025,11:37,6,5
+1755238028339,,3,Hospital 3,A+,Whole Blood,4,Critical,Pending,15-08-2025,11:37,5,1
+1755238327708,,20,Hospital 20,A+,Platelets,5,Normal,Pending,15-08-2025,11:42,1,2
+1755238627766,,3,Hospital 3,B+,Platelets,4,Urgent,Pending,15-08-2025,11:47,1,1
+1755238927819,,6,Hospital 6,AB-,RBC,2,Normal,Pending,15-08-2025,11:52,4,4
+1755239227870,,1,Hospital 1,AB-,RBC,3,Normal,Pending,15-08-2025,11:57,8,4
+1755239527892,,10,Hospital 10,A+,Whole Blood,5,Urgent,Pending,15-08-2025,12:02,8,1
+1755239827923,,18,Hospital 18,AB+,Whole Blood,4,Normal,Pending,15-08-2025,12:07,6,4
+1755243195941,,12,Hospital 12,A+,Whole Blood,3,Normal,Resolved,15-08-2025,13:03,2,2
+1754990556767,,13,Hospital 13,AB-,Whole Blood,2,Critical,Pending,12-08-2025,14:52,3,3
+1754990257076,,3,Hospital 3,AB-,RBC,4,Critical,Pending,12-08-2025,14:47,7,4
+1754990256747,,5,Hospital 5,A-,RBC,5,Normal,Pending,12-08-2025,14:47,2,5
+1754989957045,,17,Hospital 17,O-,Whole Blood,5,Normal,Pending,12-08-2025,14:42,6,4
+1754989956724,,8,Hospital 8,A-,Whole Blood,2,Urgent,Pending,12-08-2025,14:42,5,5
+1754989585244,,18,Hospital 18,AB+,Plasma,4,Critical,Pending,12-08-2025,14:36,4,1
+1754989584893,,20,Hospital 20,A+,Platelets,2,Critical,Pending,12-08-2025,14:36,5,3
+1754989285213,,13,Hospital 13,A+,RBC,4,Normal,Pending,12-08-2025,14:31,2,3
+1754989284870,,16,Hospital 16,A-,Plasma,1,Critical,Pending,12-08-2025,14:31,6,1
+1754988985178,,16,Hospital 16,O-,RBC,4,Urgent,Pending,12-08-2025,14:26,1,4
+1754988984852,,14,Hospital 14,B+,Platelets,5,Urgent,Pending,12-08-2025,14:26,6,5
+1754988840821,,2,Hospital 2,B+,RBC,1,Urgent,Pending,12-08-2025,14:24,2,2

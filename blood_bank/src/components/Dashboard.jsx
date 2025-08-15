@@ -3,13 +3,48 @@ import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
 
-const API_BASE_URL = 'http://127.0.0.1:5000';
+const API_BASE_URL = 'http://127.0.0.1:5002';
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const [notifications, setNotifications] = useState([]);
+  const [pendingHospitalRequests, setPendingHospitalRequests] = useState(0);
+  const [donorYesCount, setDonorYesCount] = useState(0);
+  const [lowStockCount, setLowStockCount] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  // Fetch low stock count from inventory
+  const fetchLowStockCount = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/inventory`);
+      if (response.ok) {
+        const data = await response.json();
+        // Count rows with status 'LOW STOCK' (case-insensitive)
+        const lowCount = (data.inventory || []).filter(row => (row.status || '').toLowerCase().includes('low')).length;
+        setLowStockCount(lowCount);
+      } else {
+        setLowStockCount(0);
+      }
+    } catch {
+      setLowStockCount(0);
+    }
+  };
+  // Fetch donor responses with status 'yes'
+  const fetchDonorYesCount = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/bank-hospital-responses`);
+      if (response.ok) {
+        const data = await response.json();
+        // Count responses with 'yes'
+        const yesCount = (data.responses || []).filter(r => (r.response || '').toLowerCase() === 'yes').length;
+        setDonorYesCount(yesCount);
+      } else {
+        setDonorYesCount(0);
+      }
+    } catch {
+      setDonorYesCount(0);
+    }
+  };
 
   const fetchNotifications = async () => {
     setLoading(true);
@@ -29,9 +64,34 @@ const Dashboard = () => {
     }
   };
 
+  // Fetch pending hospital requests
+  const fetchPendingHospitalRequests = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/alerts`);
+      if (response.ok) {
+        const data = await response.json();
+        // Count requests not completed or resolved
+        const pending = (data.alerts || []).filter(a => a.status && !['Completed', 'Resolved'].includes(a.status)).length;
+        setPendingHospitalRequests(pending);
+      } else {
+        setPendingHospitalRequests(0);
+      }
+    } catch {
+      setPendingHospitalRequests(0);
+    }
+  };
+
   useEffect(() => {
     fetchNotifications();
-    const interval = setInterval(fetchNotifications, 60000); // refresh every 1 min
+    fetchPendingHospitalRequests();
+    fetchDonorYesCount();
+    fetchLowStockCount();
+    const interval = setInterval(() => {
+      fetchNotifications();
+      fetchPendingHospitalRequests();
+      fetchDonorYesCount();
+      fetchLowStockCount();
+    }, 60000); // refresh every 1 min
     return () => clearInterval(interval);
   }, []);
 
@@ -58,15 +118,15 @@ const Dashboard = () => {
             <div className="card-icon">🚨</div>
             <div className="card-content">
               <h3>ACTIVE ALERTS</h3>
-              <span className="card-value">{notifications.filter(n => n.status === 'Pending').length}</span>
-              <div className="card-status urgent">{notifications.filter(n => n.type === 'Inventory Shortage').length} Shortages</div>
+              <span className="card-value">{lowStockCount}</span>
+              <div className="card-status urgent">{lowStockCount} Shortages</div>
             </div>
           </div>
           <div className="card">
             <div className="card-icon">📞</div>
             <div className="card-content">
               <h3>DONOR RESPONSES</h3>
-              <span className="card-value">{notifications.filter(n => n.type === 'Donor Response').length}</span>
+              <span className="card-value">{donorYesCount}</span>
               <div className="card-status">Today</div>
             </div>
           </div>
@@ -74,7 +134,7 @@ const Dashboard = () => {
             <div className="card-icon">⚡</div>
             <div className="card-content">
               <h3>HOSPITAL REQUESTS</h3>
-              <span className="card-value">{notifications.filter(n => n.type === 'Hospital Request').length}</span>
+              <span className="card-value">{pendingHospitalRequests}</span>
               <div className="card-status urgent">Active</div>
             </div>
           </div>

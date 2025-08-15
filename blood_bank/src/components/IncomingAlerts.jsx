@@ -25,7 +25,7 @@ const IncomingAlerts = () => {
     const fetchAlerts = async () => {
       setLoading(true);
       try {
-        const res = await fetch("http://127.0.0.1:5000/api/alerts");
+        const res = await fetch("http://127.0.0.1:5002/api/alerts");
         const data = await res.json();
         if (data.status === "success") {
           setAlerts(data.alerts);
@@ -54,7 +54,7 @@ const IncomingAlerts = () => {
     const confirmed = window.confirm(`Mark this alert for ${alert.hospital_name} (${alert.blood_group}, ${alert.component}) as completed? This will update inventory management.`);
     if (!confirmed) return;
     try {
-      const res = await fetch('http://127.0.0.1:5000/api/alerts/complete', {
+      const res = await fetch('http://127.0.0.1:5002/api/alerts/complete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -67,7 +67,7 @@ const IncomingAlerts = () => {
       const data = await res.json();
       if (data.status === 'success') {
         // Re-fetch alerts to update status
-        const res2 = await fetch("http://127.0.0.1:5000/api/alerts");
+  const res2 = await fetch("http://127.0.0.1:5002/api/alerts");
         const data2 = await res2.json();
         if (data2.status === "success") {
           setAlerts(data2.alerts);

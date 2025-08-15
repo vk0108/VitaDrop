@@ -1,5 +1,5 @@
 donor_id,name,email,phone,blood_group,city,lat,lon,last_donated,cooldown_complete,health_flag,ranking_score,blood_group_id
-1,Donor 1,donor1@mail.com,+91-7574228482,O-,Bangalore,12.975207592391143,77.56417843388553,2025-07-01,False,Good,4.26,6
+1,Donor 1,bhavadharani1753@gmail.com,+91-7574228482,O-,Bangalore,12.975207592391143,77.56417843388553,2025-07-01,False,Good,4.26,6
 2,Donor 2,donor2@mail.com,+91-9860082543,AB+,Bangalore,12.988896608186243,77.58170009952048,2025-03-07,True,Needs Checkup,3.41,7
 3,Donor 3,donor3@mail.com,+91-7457449286,O-,Bangalore,12.962652325136192,77.59744326770299,2025-03-01,True,Good,3.66,6
 4,Donor 4,donor4@mail.com,+91-9549504652,O+,Bangalore,12.963900739407752,77.59063579248377,2025-02-23,True,Needs Checkup,2.87,5
