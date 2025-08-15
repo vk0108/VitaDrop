@@ -3,6 +3,7 @@
 VitaDrop is a modern blood donation management platform that connects donors, hospitals, and blood banks to ensure life-saving blood is available when and where it's needed most.
 
 ## Getting Started
+- To clone other folders, visit all the branches
 
 ### Prerequisites
 - Node.js (v14 or above recommended)
