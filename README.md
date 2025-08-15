@@ -1,14 +1,10 @@
-# 1. Navigate to your project's local folder
-cd path/to/VitaDrop
+## Main Page
 
-# 2. Create a new README.md with a placeholder
-echo "# VitaDrop Project" > README.md
+A main page that connects the **Hospital Dashboard**, **Blood Bank Dashboard**, and **Donor Dashboard**, and also includes an **About** page and an **Educational** page about blood donation.
 
-# 3. Stage the new README for commit
-git add README.md
+## Frontend
 
-# 4. Commit with a message
-git commit -m "Add README.md"
-
-# 5. Push the commit to GitHub
-git push origin main
+- **Port:** 3001  
+- **Run Command:**  
+  ```bash
+  npm start
