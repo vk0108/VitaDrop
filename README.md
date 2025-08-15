@@ -20,11 +20,11 @@ It includes:
 ## Installation
 1. **Clone the repository**
     ```sh
-    git clone <your-repo-url>
+    git clone <>
     ```
 2. **Navigate to the project directory**
     ```sh
-    cd donor_web
+    cd donar_web
     ```
 3. **Install frontend dependencies**
     ```sh
@@ -51,5 +51,5 @@ It includes:
 
 3. **React.js Frontend** (PowerShell):
     ```sh
-    cd donor_web
+    cd donar_web
     npm start
