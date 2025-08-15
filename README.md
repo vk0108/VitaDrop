@@ -46,6 +46,8 @@ It includes:
 2. **Node.js Backend** (Bash):
     ```sh
     node server.js
+    
+### Step 2 – Start Frontend
 
 3. **React.js Frontend** (PowerShell):
     ```sh
