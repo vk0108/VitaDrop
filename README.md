@@ -1,10 +1,54 @@
-## Main Page
+# VitaDrop
 
-A main page that connects the **Hospital Dashboard**, **Blood Bank Dashboard**, and **Donor Dashboard**, and also includes an **About** page and an **Educational** page about blood donation.
+VitaDrop is a modern blood donation management platform that connects donors, hospitals, and blood banks to ensure life-saving blood is available when and where it's needed most.
 
-## Frontend
+## Getting Started
 
-- **Port:** 3001  
-- **Run Command:**  
-  ```Git bash
-  PORT=3001 npm start
+### Prerequisites
+- Node.js (v14 or above recommended)
+- npm (comes with Node.js)
+
+### Installation
+1. Clone the repository:
+	```sh
+	git clone <your-repo-url>
+	```
+2. Navigate to the project directory:
+	```sh
+	cd mainpage
+	```
+3. Install dependencies:
+	```sh
+	npm install
+	```
+
+### Running the App
+To run on a different port (e.g., 3001):
+```sh
+PORT=3001 npm start
+```
+
+## Project Structure
+```
+mainpage/
+  ├── public/
+  ├── src/
+  │   ├── App.js
+  │   ├── App.css
+  │   └── ...
+  ├── package.json
+  └── README.md
+```
+
+## Technologies Used
+- React
+- CSS (custom, no frameworks)
+
+## Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+[MIT](LICENSE)
+
+---
+© 2025 VitaDrop. All rights reserved.
