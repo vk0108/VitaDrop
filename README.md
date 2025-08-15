@@ -24,7 +24,7 @@ It includes:
     ```
 2. **Navigate to the project directory**
     ```sh
-    cd mainpage
+    cd donor_web
     ```
 3. **Install frontend dependencies**
     ```sh
@@ -46,3 +46,8 @@ It includes:
 2. **Node.js Backend** (Bash):
     ```sh
     node server.js
+
+3. **React.js Frontend** (PowerShell):
+    ```sh
+    cd donor_web
+    npm start
