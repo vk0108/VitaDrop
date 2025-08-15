@@ -462,9 +462,9 @@ def load_donors_from_csv():
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'krithikavenkates@gmail.com'      # <-- your email
-app.config['MAIL_PASSWORD'] = 'vphf qqgh nfsg kcqt'         # <-- your app password
-app.config['MAIL_DEFAULT_SENDER'] = 'krithikavenkates@gmail.com'
+app.config['MAIL_USERNAME'] = ''      # <-- your email
+app.config['MAIL_PASSWORD'] = ''         # <-- your app password
+app.config['MAIL_DEFAULT_SENDER'] = ''# <-- your email
 
 mail = Mail(app)
 @app.route('/api/bloodbanks', methods=['GET'])
