@@ -1,9 +1,6 @@
 # VitaDrop
 
 VitaDrop is a modern blood donation management platform that connects donors, hospitals, and blood banks to ensure life-saving blood is available when and where it's needed most.  
-It includes:
-- **Main Page** – connects the Hospital Dashboard, Blood Bank Dashboard, and Donor Dashboard, plus an **About Page** and **Educational Page** about blood donation.
-- **Donor Dashboard** – connects Donors, Blood Banks, and Hospitals for efficient blood donation coordination.
 
 ---
 
