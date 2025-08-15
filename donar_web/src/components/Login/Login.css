@@ -1,0 +1,358 @@
+/* src/components/Login/Login.css */
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #fee2e2 30%, #fecaca 70%, #dc2626 100%);
+}
+
+.login-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.1;
+  animation: float 8s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 100px;
+  height: 100px;
+  background: #dc2626;
+  border-radius: 50%;
+  top: 20%;
+  left: 10%;
+}
+
+.shape-2 {
+  width: 150px;
+  height: 150px;
+  background: #ef4444;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 80px;
+  height: 80px;
+  background: #f87171;
+  border-radius: 20px;
+  top: 40%;
+  right: 20%;
+  animation-delay: 4s;
+  transform: rotate(45deg);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-30px) rotate(120deg); }
+  66% { transform: translateY(15px) rotate(240deg); }
+}
+
+.blood-cells {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.blood-cells::before,
+.blood-cells::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #dc2626;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: bloodFlow 12s linear infinite;
+}
+
+.blood-cells::before {
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.blood-cells::after {
+  top: 70%;
+  animation-delay: 6s;
+}
+
+@keyframes bloodFlow {
+  0% { left: -50px; }
+  100% { left: calc(100% + 50px); }
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(220, 38, 38, 0.1);
+  border-radius: 30px;
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 
+    0 25px 50px rgba(220, 38, 38, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.5);
+  z-index: 10;
+  position: relative;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.logo-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 35px;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 15px 35px rgba(220, 38, 38, 0.3);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.login-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.input-container {
+  position: relative;
+  background: white;
+  border: 2px solid #f3f4f6;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.input-container:focus-within {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-input {
+  width: 100%;
+  padding: 18px 50px 18px 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #1f2937;
+  background: transparent;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.input-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+
+.password-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+
+.input-container:focus-within .input-icon {
+  color: #dc2626;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.checkbox-container input:checked + .custom-checkbox {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.checkmark {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.checkbox-container span {
+  color: #374151;
+  font-size: 14px;
+}
+
+.forgot-link {
+  color: #dc2626;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+  color: #b91c1c;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(220, 38, 38, 0.4);
+}
+
+.login-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.register-link {
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: #dc2626;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    margin: 20px;
+    padding: 30px 25px;
+  }
+  
+  .login-header h1 {
+    font-size: 24px;
+  }
+  
+  .logo-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+  }
+}

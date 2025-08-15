@@ -1,0 +1,543 @@
+/* Main Container - Same as Profile */
+.donation-history-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ef4444, #f87171, #fb7185);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Background Animations - Same as Profile */
+.background-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  filter: blur(40px);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.orb-1 {
+  top: 80px;
+  left: 80px;
+  width: 288px;
+  height: 288px;
+  background: linear-gradient(45deg, rgba(239, 68, 68, 0.3), rgba(251, 113, 133, 0.3));
+}
+
+.orb-2 {
+  top: 160px;
+  right: 80px;
+  width: 384px;
+  height: 384px;
+  background: linear-gradient(45deg, rgba(251, 113, 133, 0.3), rgba(239, 68, 68, 0.3));
+  animation-delay: 1s;
+}
+
+.orb-3 {
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 320px;
+  background: linear-gradient(45deg, rgba(252, 165, 165, 0.4), rgba(251, 113, 133, 0.4));
+  animation-delay: 2s;
+}
+
+/* Floating Drops */
+.floating-drop {
+  position: absolute;
+  animation: float-drops 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+.drop-icon {
+  font-size: 28px;
+  opacity: 0.8;
+  color: #dc2626;
+  text-shadow: 0 2px 8px rgba(220, 38, 38, 0.5);
+  filter: drop-shadow(0 0 10px rgba(220, 38, 38, 0.6));
+}
+
+/* Animated Dots Pattern */
+.dots-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.4) 2px, transparent 2px);
+  background-size: 50px 50px;
+  transition: transform 0.3s ease-out;
+}
+
+/* Main Content */
+.content-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+  padding-top: 40px;
+}
+
+.donation-history-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Page Header */
+.page-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 32px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.title-section {
+  flex: 1;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+}
+
+.title-icon {
+  width: 40px;
+  height: 40px;
+  color: #ef4444;
+}
+
+.page-subtitle {
+  color: #6b7280;
+  font-size: 1.125rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Summary Stats */
+.summary-stats {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.summary-item {
+  text-align: center;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #fef2f2, #fce7f3);
+  border-radius: 16px;
+  border: 1px solid rgba(239, 68, 68, 0.1);
+}
+
+.summary-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ef4444;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.summary-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* History Card */
+.history-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  padding: 24px 32px;
+  color: white;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Table Container */
+.donation-table-container {
+  padding: 32px;
+}
+
+/* Desktop Table */
+.desktop-table {
+  display: block;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.donation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.donation-table thead {
+  background: linear-gradient(135deg, #fef2f2, #fce7f3);
+}
+
+.donation-table th {
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
+  font-size: 0.875rem;
+}
+
+.donation-table th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.donation-table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.th-icon {
+  width: 16px;
+  height: 16px;
+  color: #ef4444;
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.donation-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #1f2937;
+}
+
+.table-row {
+  transition: all 0.3s ease;
+}
+
+.table-row:hover {
+  background: #fef2f2;
+}
+
+.table-row:last-child td {
+  border-bottom: none;
+}
+
+.date-cell {
+  font-weight: 600;
+  color: #374151;
+}
+
+.location-cell {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.blood-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+  text-align: center;
+  min-width: 40px;
+}
+
+.units-cell {
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.status-badge.completed {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.status-badge.cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.status-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Mobile Cards */
+.mobile-cards {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.donation-card-mobile {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.donation-card-mobile:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.card-mobile-header {
+  background: linear-gradient(135deg, #fef2f2, #fce7f3);
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mobile-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.card-mobile-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-info-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+}
+
+.mobile-icon {
+  width: 16px;
+  height: 16px;
+  color: #ef4444;
+  flex-shrink: 0;
+}
+
+.mobile-label {
+  font-weight: 600;
+  color: #6b7280;
+  min-width: 90px;
+}
+
+.mobile-value {
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* Animations - Same as Profile */
+@keyframes pulse-glow {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.5; 
+    transform: scale(1.1);
+  }
+}
+
+@keyframes float-drops {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg) scale(1); 
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-15px) rotate(5deg) scale(1.1);
+    opacity: 0.9;
+  }
+  50% { 
+    transform: translateY(-30px) rotate(-5deg) scale(1.2); 
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-15px) rotate(3deg) scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-container {
+    padding: 16px;
+    padding-top: 24px;
+  }
+  
+  .donation-history-wrapper {
+    max-width: 100%;
+  }
+  
+  .page-header {
+    padding: 24px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .summary-stats {
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .summary-item {
+    flex: 1;
+    padding: 12px 16px;
+  }
+  
+  .summary-number {
+    font-size: 1.5rem;
+  }
+  
+  .card-header {
+    padding: 20px 24px;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+  
+  .donation-table-container {
+    padding: 24px;
+  }
+  
+  /* Switch to mobile cards */
+  .desktop-table {
+    display: none;
+  }
+  
+  .mobile-cards {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.75rem;
+  }
+  
+  .title-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .summary-stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .summary-item {
+    width: 100%;
+  }
+  
+  .card-mobile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .mobile-info-row {
+    flex-wrap: wrap;
+  }
+  
+  .mobile-label {
+    min-width: 80px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .floating-drop {
+    animation: none;
+  }
+  
+  .gradient-orb {
+    animation: none;
+  }
+}
