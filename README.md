@@ -23,7 +23,6 @@ VitaDrop is a modern blood donation management platform that connects donors, ho
 	```
 
 ### Running the App
-To run on a different port (e.g., 3001):
 ```sh
 PORT=3001 npm start
 ```
