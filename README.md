@@ -6,5 +6,5 @@ A main page that connects the **Hospital Dashboard**, **Blood Bank Dashboard**, 
 
 - **Port:** 3001  
 - **Run Command:**  
-  ```bash
-  npm start
+  ```Git bash
+  PORT=3001 npm start
