@@ -37,11 +37,14 @@ VitaDrop is a modern blood bank management platform that connects donors, hospit
 ### Step 1 – Start Backends
 1. **Python Flask Backend** (PowerShell):
     ```sh
+    cd backend
     python app.py
     ```
 
    2.**Frontend** (Bash):
     ```sh
+       cd blood_bank
        PORT=3002 npm start
+
 
 
