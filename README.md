@@ -22,7 +22,7 @@ VitaDrop is a modern blood donation management platform that connects donors, ho
 	npm install
 	```
 
-### Running the App
+### Running the App in Git Bash
 ```sh
 PORT=3001 npm start
 ```
