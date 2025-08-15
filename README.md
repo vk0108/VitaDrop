@@ -20,7 +20,7 @@ It includes:
 ## Installation
 1. **Clone the repository**
     ```sh
-    git clone <>
+    git clone <https://github.com/vk0108/VitaDrop.git>
     ```
 2. **Navigate to the project directory**
     ```sh
