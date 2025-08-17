@@ -30,6 +30,9 @@ VitaDrop is a modern hospital management platform that connects donors, blood ba
 
 ---
 
+## Update code at line 465 to 467 in app.py
+- use your own mail id and app password at those lines.
+
 ## Running the Applications
 
 ⚠ **Important:** The backends must be started **before** running the frontends.
@@ -45,5 +48,6 @@ VitaDrop is a modern hospital management platform that connects donors, blood ba
     ```sh
        cd hospital
        PORT=3004 npm start
+
 
 
