@@ -14,6 +14,9 @@ VitaDrop is a modern blood bank management platform that connects donors, hospit
 
 ---
 
+## Update code at line 316 to 318 in app.py
+- Use your own mail id and app password at those lines.
+  
 ## Installation
 1. **Clone the repository**
     ```sh
@@ -45,6 +48,7 @@ VitaDrop is a modern blood bank management platform that connects donors, hospit
     ```sh
        cd blood_bank
        PORT=3002 npm start
+
 
 
 
